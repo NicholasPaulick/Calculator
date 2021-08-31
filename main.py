@@ -1,18 +1,17 @@
 import tkinter as tk
 import tkinter.font as tkFont
 
-import numpy as np
-
 class Calculator():
     #
     # Sets everything up on run
     #
     def __init__(self):
         #
-        # STORES YOUR EQUATION
+        # Important Variables
         #
 
         self.equation = ""
+        self.round = 2
 
         #
         # Creates GUI Parts
@@ -69,7 +68,7 @@ class Calculator():
     #
     def Display(self):
         # Display
-        self.display = tk.Label(self.dframe, text = "Working on it rn", font = self.Displayfont)
+        self.display = tk.Label(self.dframe, text = "            ", font = self.Displayfont)
 
         # Top Row
         self.seven = tk.Button(self.tframe, text = "7", font = self.Buttonfont, command=lambda : self.Store("7"))
