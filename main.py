@@ -150,7 +150,15 @@ class Calculator():
     # Runs the Calculation and displays it
     #
     def Calculate(self):
-        print(self.equation)
+        # Solves the equation and puts it back into string form
+        self.equation = str(eval(self.equation))
+
+        # Auto rounds the answer if the decimal is longer that 3 places
+        if len(self.equation) >= 8:
+            self.equation = str(round(eval(self.equation), 3))
+
+        # Displays the answer
+        self.display['text'] = self.equation
 
 
 # Calls the program to run
