@@ -21,6 +21,7 @@ class Calculator():
         self.root.title("Calculator")
         self.root.geometry("400x600")
         self.root.resizable(False, False)
+        self.root.bind('<Key>', self.Key)
         self.Displayfont = tkFont.Font(family = "Lucida Grande", size=40)
         self.Buttonfont = tkFont.Font(family = "Lucida Grande", size=35)
 
@@ -132,6 +133,26 @@ class Calculator():
         # Functions Row Pack
         self.clear.pack(side=tk.LEFT)
         self.equal.pack(side=tk.RIGHT)
+    
+    #
+    # Key Press does stuff
+    #
+    def Key(self, event):
+        key = event.char
+        if key.isnumeric():
+            self.Store(key)
+        elif key == ".":
+            self.Store(key)
+        elif key == "+":
+            self.Store(key)
+        elif key == "-":
+            self.Store(key)
+        elif key == "*":
+            self.Store(key)
+        elif key == "/":
+            self.Store(key)
+        elif key == "C" or "c":
+            self.Calculate()  
 
     # 
     # Updates the variable holding the inputs and the display bar
@@ -161,7 +182,7 @@ class Calculator():
 
 
 # Calls the program to run
-if True:
+if __name__ == "__main__":
     try:
         Calculator()
     except:
