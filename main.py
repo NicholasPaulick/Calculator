@@ -69,7 +69,7 @@ class Calculator():
     #
     def Display(self):
         # Display
-        self.display = tk.Label(self.dframe, text = "            ", font = self.Displayfont)
+        self.display = tk.Label(self.dframe, text = " ", font = self.Displayfont)
 
         # Top Row
         self.seven = tk.Button(self.tframe, text = "7", font = self.Buttonfont, command=lambda : self.Store("7"))
@@ -161,7 +161,7 @@ class Calculator():
         #Checks to see if It needs to clear the variable and display or update it
         if val == "C":
             self.equation = ""
-            self.display['text'] = "                         "
+            self.display['text'] = " "
         else:
             self.equation = self.equation + val
             self.display['text'] = self.equation
